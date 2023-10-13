@@ -22,6 +22,7 @@ class _StartPage extends State<StartPage> {
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 250,
+          color: const Color.fromARGB(151, 255, 255, 255),
         ),
         const Padding(
           padding: EdgeInsets.only(top: 60, bottom: 20),
