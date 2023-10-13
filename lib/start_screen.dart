@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class StartPage extends StatefulWidget {
-  const StartPage({super.key});
+class StartScreen extends StatefulWidget {
+  const StartScreen({super.key});
 
   @override
-  State<StartPage> createState() {
-    return _StartPage();
+  State<StartScreen> createState() {
+    return _StartScreen();
   }
 }
 
-class _StartPage extends State<StartPage> {
+class _StartScreen extends State<StartScreen> {
   void startQuiz() {
     setState(() {});
   }
