@@ -24,7 +24,7 @@ class _StartPage extends State<StartPage> {
           width: 250,
         ),
         const Padding(
-          padding: EdgeInsets.only(top: 60),
+          padding: EdgeInsets.only(top: 60, bottom: 20),
           child: Text(
             'Learn Flutter the fun way!',
             style: TextStyle(
@@ -33,13 +33,13 @@ class _StartPage extends State<StartPage> {
             ),
           ),
         ),
-        OutlinedButton(
+        OutlinedButton.icon(
           onPressed: startQuiz,
           style: OutlinedButton.styleFrom(
-              padding: const EdgeInsets.only(top: 30),
               foregroundColor: Colors.white,
               textStyle: const TextStyle(fontSize: 18)),
-          child: const Text('Start Quiz'),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text('Start Quiz'),
         )
       ],
     );
