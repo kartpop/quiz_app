@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
 
-class StartScreen extends StatefulWidget {
-  const StartScreen({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen(this.startQuiz, {super.key});
 
-  @override
-  State<StartScreen> createState() {
-    return _StartScreen();
-  }
-}
-
-class _StartScreen extends State<StartScreen> {
-  void startQuiz() {
-    setState(() {});
-  }
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
+    return Center(
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 250,
@@ -42,7 +32,7 @@ class _StartScreen extends State<StartScreen> {
           icon: const Icon(Icons.arrow_right_alt),
           label: const Text('Start Quiz'),
         )
-      ],
+      ]),
     );
   }
 }

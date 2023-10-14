@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -13,11 +14,25 @@ class Quiz extends StatefulWidget {
 
   @override
   State<Quiz> createState() {
-    return _Quiz();
+    return _QuizState();
   }
 }
 
-class _Quiz extends State<Quiz> {
+class _QuizState extends State<Quiz> {
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    super.initState();
+    activeScreen = StartScreen(switchScreen);
+  }
+
+  void switchScreen() {
+    setState(() {
+      activeScreen = QuestionsScreen();
+    });
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -30,9 +45,7 @@ class _Quiz extends State<Quiz> {
               end: endAlignment,
             ),
           ),
-          child: const Center(
-            child: StartScreen(),
-          ),
+          child: activeScreen,
         ),
       ),
     );
