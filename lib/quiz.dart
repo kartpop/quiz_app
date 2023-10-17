@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_screen.dart';
+import 'package:quiz_app/results_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -35,13 +36,23 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswers.length == questions.length) {
       setState(() {
         selectedAnswers = []; // reset after all questions are answered
-        activeScreen = 'start-screen';
+        activeScreen = 'results-screen';
       });
     }
   }
 
   @override
   Widget build(context) {
+    Widget screenWidget = StartScreen(switchScreen);
+
+    if (activeScreen == 'questions-screen') {
+      screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
+    }
+
+    if (activeScreen == 'results-screen') {
+      screenWidget = ResultsScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -52,9 +63,7 @@ class _QuizState extends State<Quiz> {
               end: endAlignment,
             ),
           ),
-          child: activeScreen == 'start-screen'
-              ? StartScreen(switchScreen)
-              : QuestionsScreen(onSelectAnswer: chooseAnswer),
+          child: screenWidget,
         ),
       ),
     );
