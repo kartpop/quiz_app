@@ -14,7 +14,7 @@ class QuestionsSummary extends StatelessWidget {
           children: summaryData.map(
             (data) {
               return Padding(
-                padding: const EdgeInsets.only(bottom: 21.0),
+                padding: const EdgeInsets.symmetric(vertical: 9.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
