@@ -44,7 +44,7 @@ class ResultsScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 171, 156, 248),
-                  fontSize: 18,
+                  fontSize: 21,
                   fontWeight: FontWeight.bold,
                 )),
             const SizedBox(
@@ -57,7 +57,7 @@ class ResultsScreen extends StatelessWidget {
             OutlinedButton.icon(
               onPressed: () {},
               style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.white,
+                  foregroundColor: const Color.fromARGB(194, 255, 255, 255),
                   textStyle: const TextStyle(fontSize: 18)),
               icon: const Icon(Icons.refresh),
               label: const Text(

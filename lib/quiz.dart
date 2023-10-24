@@ -24,7 +24,7 @@ class _QuizState extends State<Quiz> {
   var activeScreen = 'start-screen';
   List<String> selectedAnswers = [];
 
-  void switchScreen() {
+  void startQuiz() {
     setState(() {
       activeScreen = 'questions-screen';
     });
@@ -42,7 +42,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget = StartScreen(startQuiz);
 
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(
