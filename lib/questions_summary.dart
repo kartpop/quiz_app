@@ -5,6 +5,7 @@ class QuestionsSummary extends StatelessWidget {
 
   final List<Map<String, Object>> summaryData;
 
+  // TODO: refactor widget into smaller components
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,13 +23,13 @@ class QuestionsSummary extends StatelessWidget {
                       ((data['question_index'] as int) + 1).toString(),
                       style: TextStyle(
                         color: data['user_answer'] == data['correct_answer']
-                            ? Color.fromARGB(255, 129, 255, 244)
-                            : Color.fromARGB(255, 205, 105, 223),
+                            ? const Color.fromARGB(255, 129, 255, 244)
+                            : const Color.fromARGB(255, 205, 105, 223),
                         fontSize: 21,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Expanded(
